@@ -20,7 +20,9 @@ pipeline{
 				echo ${deployenvior}
 		      }
       }
-    }
+	}
+}
+	
 	def deployenviornment(){
 	script {
 		 if(env.JOB_NAME.contains("-qa")){
@@ -32,4 +34,4 @@ pipeline{
               }
 			       }
 	}
-    }
+    
