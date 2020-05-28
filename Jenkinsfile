@@ -2,12 +2,12 @@ pipeline{
 	
 	environment {
 		script {
-		 if(env.JOB_NAME.contains("qa")){
+		 if(env.JOB_NAME.contains("-qa")){
                 echo 'I will execute on qa'
 			 deployenvior = "qa"
 		 } else if (env.JOB_NAME.contains("dev")) {
                 echo 'I execute on dev'
-			 deployenvior = "dev"
+			 deployenvior = "-dev"
               }
 			       }
    }
