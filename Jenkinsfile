@@ -14,9 +14,9 @@ pipeline{
     stage('check'){
 			steps{
          script {
-            if (env.JOB_NAME == 'test-pipeline-qa') {
+		 if ($environment == 'qa') {
                 echo 'I will execute on qa'
-              } else if (env.JOB_NAME == 'test-pipeline') {
+              } else if ($environment == 'dev') {
                 echo 'I execute on dev'
               }
 			       }
