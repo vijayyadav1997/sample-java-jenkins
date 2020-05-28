@@ -6,7 +6,8 @@ pipeline{
 	tools{
 		maven 'maven'
 	}
-	if(${deployenvior} == 'qa'){
+
+
 	stages{
 		stage('build'){
 			steps{
@@ -18,8 +19,18 @@ pipeline{
 				echo "${deployenvior}"
 		     }
 		}
+		script{
+		if(${deployenvior} == 'qa'){
+		stage('checkagain'){
+			steps{
+				echo "${deployenvior}"
+		     }
+		}
+		}
+		}
 	}
-	}
+	
+		if(${deployenvior} == 'qa'){
 }
 	
 	def deployenviornment(){
