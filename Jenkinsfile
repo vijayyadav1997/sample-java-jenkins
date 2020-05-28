@@ -19,7 +19,7 @@ pipeline{
 				echo "${deployenvior}"
 		     }
 		}
-		script{
+		
 		if(${deployenvior} == 'qa'){
 		stage('check'){
 			steps{
@@ -27,7 +27,7 @@ pipeline{
 		     }
 		}
 		}
-		}
+		
 	}
 	
 }
