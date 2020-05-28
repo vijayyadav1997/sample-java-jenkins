@@ -21,7 +21,7 @@ pipeline{
 		}
 		script{
 		if(${deployenvior} == 'qa'){
-		stage('checkagain'){
+		stage('check'){
 			steps{
 				echo "${deployenvior}"
 		     }
@@ -30,7 +30,6 @@ pipeline{
 		}
 	}
 	
-		if(${deployenvior} == 'qa'){
 }
 	
 	def deployenviornment(){
