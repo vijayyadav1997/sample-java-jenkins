@@ -20,13 +20,16 @@ pipeline{
 		     }
 		}
 		
-		if(${deployenvior} == 'qa'){
+		
 		stage('check'){
+			when {
+				${deployenvior}=='qa'
+			}
 			steps{
 				echo "${deployenvior}"
 		     }
 		}
-		}
+		
 		
 	}
 	
