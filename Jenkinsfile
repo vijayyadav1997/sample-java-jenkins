@@ -6,7 +6,6 @@ pipeline{
 	tools{
 		maven 'maven'
 	}
-	script{
 	if(${deployenvior} == 'qa'){
 	stages{
 		stage('build'){
@@ -19,7 +18,6 @@ pipeline{
 				echo "${deployenvior}"
 		     }
 		}
-	}
 	}
 	}
 }
