@@ -14,7 +14,7 @@ pipeline{
     stage('check'){
 			steps{
          script {
-            if (env.BRANCH_NAME == 'master') {
+            if (env.JOB_NAME == 'test-pipeline') {
                 echo 'I will execute on dev'
               } else {
                 echo 'I execute on qa'
