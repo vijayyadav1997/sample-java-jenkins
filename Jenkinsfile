@@ -1,37 +1,37 @@
 pipeline{
-	
-	
 	environment {
-		deployenvior=deployenviornment()
-		
-   }
+		deployenvior=deployenviornment()	
+    }
 	agent any
 	tools{
 		maven 'maven'
 	}
+	script{
+	if(${deployenvior} == 'qa'){
 	stages{
 		stage('build'){
 			steps{
 				sh 'mvn clean compile package'
 			}
 		}
-    stage('check'){
+		stage('check'){
 			steps{
 				echo "${deployenvior}"
-		      }
-      }
+		     }
+		}
+	}
+	}
 	}
 }
 	
 	def deployenviornment(){
-	script {
+		script {
 		 if(env.JOB_NAME.contains("-qa")){
                 echo 'I will execute on qa'
 			 return "qa"
-		 } else if (env.JOB_NAME.contains("dev")) {
+		} else if (env.JOB_NAME.contains("dev")) {
                 echo 'I execute on dev'
 			 return "dev"
-              }
-			       }
+        }
+		}
 	}
-    
