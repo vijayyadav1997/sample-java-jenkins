@@ -1,7 +1,5 @@
 pipeline{
-	
-	environment {
-		script {
+	script {
 		 if(env.JOB_NAME.contains("-qa")){
                 echo 'I will execute on qa'
 			 deployenvior = "qa"
@@ -10,7 +8,10 @@ pipeline{
 			 deployenvior = "-dev"
               }
 			       }
-   }
+	
+	/*environment {
+		
+   }*/
 	agent any
 	tools{
 		maven 'maven'
