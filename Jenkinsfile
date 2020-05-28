@@ -17,7 +17,7 @@ pipeline{
 		}
     stage('check'){
 			steps{
-				echo ${deployenvior}
+				echo "${deployenvior}"
 		      }
       }
 	}
