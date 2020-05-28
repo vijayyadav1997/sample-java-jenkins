@@ -21,7 +21,7 @@ pipeline{
 		}
 		
 		
-		stage('check'){
+		stage('checkagain'){
 			when {
 				${deployenvior}=='qa'
 			}
