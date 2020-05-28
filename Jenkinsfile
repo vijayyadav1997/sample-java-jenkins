@@ -1,17 +1,10 @@
 pipeline{
-	script {
-		 if(env.JOB_NAME.contains("-qa")){
-                echo 'I will execute on qa'
-			 deployenvior = "qa"
-		 } else if (env.JOB_NAME.contains("dev")) {
-                echo 'I execute on dev'
-			 deployenvior = "-dev"
-              }
-			       }
 	
-	/*environment {
+	
+	environment {
+		deployenvior=deployenviornment()
 		
-   }*/
+   }
 	agent any
 	tools{
 		maven 'maven'
@@ -28,4 +21,15 @@ pipeline{
 		      }
       }
     }
+	def deployenviornment(){
+	script {
+		 if(env.JOB_NAME.contains("-qa")){
+                echo 'I will execute on qa'
+			 return "qa"
+		 } else if (env.JOB_NAME.contains("dev")) {
+                echo 'I execute on dev'
+			 return "dev"
+              }
+			       }
+	}
     }
