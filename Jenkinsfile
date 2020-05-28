@@ -14,9 +14,9 @@ pipeline{
     stage('check'){
 			steps{
          script {
-		 if ($environment == 'qa') {
+		 if (${environment} == 'qa') {
                 echo 'I will execute on qa'
-              } else if ($environment == 'dev') {
+		 } else if (${environment} == 'dev') {
                 echo 'I execute on dev'
               }
 			       }
