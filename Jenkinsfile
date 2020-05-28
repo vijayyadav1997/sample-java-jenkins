@@ -22,7 +22,7 @@ pipeline{
 		
 		
 		stage('checkagain'){
-			when {
+			when{
 				${deployenvior}=='qa'
 			}
 			steps{
