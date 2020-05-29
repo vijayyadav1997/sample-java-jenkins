@@ -22,11 +22,12 @@ pipeline{
 		
 		
 		stage('checkagain'){
-			when{
-				${deployenvior}=='qa'
-			}
 			steps{
-				echo "${deployenvior}"
+				script{
+					if(deployenvior=='qa'){
+						echo "${deployenvior}"
+					}
+				}
 		     }
 		}
 		
